@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="col.champions"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="col.champions.ChampionsApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="col.champions.SplashScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="col.champions.MainScreen"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="col.champions.Duel"
+            android:label="@string/title_activity_duel"
+            android:parentActivityName="col.champions.MainScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="col.champions.MainScreen" />
+        </activity>
+        <activity
+            android:name="col.champions.HeroSelect"
+            android:label="@string/title_activity_hero_select"
+            android:parentActivityName="col.champions.MainScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="col.champions.MainScreen" />
+        </activity>
+        <activity
+            android:name="col.champions.Tutorial"
+            android:label="@string/title_activity_tutorial"
+            android:parentActivityName="col.champions.HeroSelect" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="col.champions.MainScreen" />
+        </activity>
+    </application>
+
+</manifest>

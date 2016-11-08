@@ -1,0 +1,237 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/playbackground"
+    tools:context=".Duel" >
+    
+    <RelativeLayout
+        android:id="@+id/topM"
+        android:contentDescription="@string/desc"
+        android:tag="00"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card" />
+
+    <RelativeLayout
+        android:id="@+id/midM1"
+        android:contentDescription="@string/desc"
+        android:tag="10"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/topM"
+        android:layout_marginTop="14dp"
+        android:layout_alignRight="@+id/botM2"
+        android:layout_marginRight="27.5dp"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card" />
+    
+    <RelativeLayout
+        android:id="@+id/midM2"
+        android:contentDescription="@string/desc"
+        android:tag="11"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/botM2"
+        android:layout_alignTop="@+id/midM1"
+        android:layout_marginLeft="27.5dp"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+    
+    <RelativeLayout
+        android:id="@+id/botM1"
+        android:contentDescription="@string/desc"
+        android:tag="20"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/midM1"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/botM2"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+    
+    <RelativeLayout
+        android:id="@+id/botM2"
+        android:contentDescription="@string/desc"
+        android:tag="21"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/botM1"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />  
+    
+    <RelativeLayout
+        android:id="@+id/botM3"
+        android:contentDescription="@string/desc"
+        android:tag="22"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/botM2"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/botM1"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+
+    <RelativeLayout
+        android:id="@+id/hand1"
+        android:contentDescription="@string/desc"
+        android:tag="30"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_toLeftOf="@+id/hand2"
+        android:layout_alignTop="@+id/hand3"
+        android:layout_marginRight="5dp"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+    
+    <RelativeLayout
+        android:id="@+id/hand2"
+        android:contentDescription="@string/desc"
+        android:tag="31"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/hand3"
+        android:layout_toLeftOf="@+id/hand3"
+        android:layout_marginRight="5dp"
+        android:adjustViewBounds="true"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+	    
+	<RelativeLayout
+        android:id="@+id/hand3"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/desc"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card" 
+        android:tag="32" />
+
+    <RelativeLayout
+        android:id="@+id/hand4"
+        android:contentDescription="@string/desc"
+        android:tag="33"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/hand3"
+        android:layout_alignTop="@+id/hand3"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="5dp"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+
+    <RelativeLayout
+        android:id="@+id/hand5"
+        android:contentDescription="@string/desc"
+        android:tag="34"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/hand4"
+        android:layout_toRightOf="@+id/hand4"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="5dp"
+        android:onClick="moveCardUp"
+        android:background="@drawable/no_card"  />
+
+
+    <Button
+        android:id="@+id/commit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hand2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:onClick="gameFlowNext"
+        android:text="@string/commit"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/player"
+        android:contentDescription="@string/desc"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/player_avatar" />
+
+    <ImageView
+        android:id="@+id/enemy"
+        android:contentDescription="@string/desc"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/enemy_avatar" />
+
+    <TextView
+        android:id="@+id/playerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/player"
+        android:layout_below="@+id/player"
+        android:text="@string/player_name" />
+
+    <TextView
+        android:id="@+id/playerHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/playerLabel"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/playerLabel"
+        android:text="@string/starting_health"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enemy"
+        android:layout_below="@+id/enemy"
+        android:text="@string/enemy_name" />
+    
+    <TextView
+        android:id="@+id/enemyHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/TextView01"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/TextView01"
+        android:text="@string/starting_health"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hand1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/midM1"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Tutorial" >
+
+    <TextView
+        android:id="@+id/tutorialText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextTut"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tutLabel"
+        android:text="" />
+
+    <Button
+        android:id="@+id/nextTut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="nextStep"
+        android:text="@string/nextTut" />
+
+    <Button
+        android:id="@+id/previousTut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nextTut"
+        android:layout_alignLeft="@+id/tutorialText"
+        android:onClick="prevStep"
+        android:text="@string/previousTut" />
+
+    <TextView
+        android:id="@+id/tutLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/stepLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nextTut"
+        android:layout_alignTop="@+id/nextTut"
+        android:layout_toLeftOf="@+id/nextTut"
+        android:layout_toRightOf="@+id/previousTut"
+        android:gravity="center_horizontal"
+        android:text="" />
+
+    <ImageView
+        android:id="@+id/gameboardImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tutorialText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tutorialText"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/title_activity_tutorial"
+        android:src="@drawable/tutorial" />
+
+</RelativeLayout>
